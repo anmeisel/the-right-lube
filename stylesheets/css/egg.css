@@ -1,0 +1,158 @@
+html {
+	background-color: #afafaf;
+}
+
+a {
+	text-decoration: none;
+	color: red;
+}
+
+.inline {
+	text-align: center;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title,
+.header,
+.ig {
+	margin-top: 10px;
+}
+
+.title {
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	line-height: 1em;
+	margin-bottom: 10px;
+	text-decoration: bold;
+}
+
+.title-toggle {
+	cursor: pointer;
+}
+
+.show-calendar {
+	display: none;
+	text-align: left;
+}
+
+i {
+	margin: 10px;
+}
+
+.speech-image {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+
+.speech-image img {
+	border: solid 2px yellow;
+	margin: 20px;
+}
+
+.subtitle {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	margin-left: 150px;
+}
+
+.sub-wrap {
+	position: relative;
+	height: 300px;
+	width: 300px;
+}
+
+.speech-tone,
+.speech-two {
+	position: absolute;
+}
+
+.speech-two {
+	margin-left: 500px;
+	margin-top: 100px;
+}
+
+.emoji-one,
+.emoji-two {
+	position: absolute;
+	z-index: 2;
+	bottom: 10px;
+	cursor: pointer;
+	font-size: 2em;
+}
+
+.emoji-one {
+	transform: rotateY(180deg);
+	right: 0px;
+}
+
+.emoji-two {
+	margin-top: 200px;
+}
+
+.bubble-one,
+.bubble-two {
+	position: absolute;
+	background-color: pink;
+	padding: 5px;
+	border: solid 2px red;
+	color: red;
+	text-align: left;
+	display: none;
+	z-index: 1;
+	bottom: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
+	width: 250px;
+}
+
+/*writing*/
+
+.arena-block {
+	margin: 20px;
+	width: 80%;
+	text-align: left;
+	overflow: hidden;
+	text-overflow: ellipsis; /*make ellipsis work!*/
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	border-bottom: 2px solid red;
+	padding-bottom: 10px;
+}
+
+.peek {
+	overflow: visible;
+	cursor: initial;
+	display: block;
+	border-bottom: none;
+}
+
+#arena-block-title {
+	font-size: 1.5em;
+	font-style: bold;
+}
+
+.description {
+	font-style: italic;
+	margin: 0;
+}
+
+.more {
+	cursor: pointer;
+	display: inline-block;
+	margin-left: 10px;
+	font-size: 0.5em;
+}
+
+.reverse {
+	transform: rotateX(180deg);
+}

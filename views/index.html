@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{{> components/ascii }}
+<html lang="en">
+	<head>
+		{{> components/head }}
+	</head>
+	<body>
+		{{> components/nav }}
+
+		<div class="speech-image">
+			<div class="bio">{{config.details.bio}}</div>
+			<div class="socials">
+				<a href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
+				<a href="https://twitter.com/therightlube?lang=en"><i class="fa">&#xf099;</i></a>
+			</div>
+			<img src="../assets/TRL.PNG" />
+			<div class="subtitle">
+				<div class="sub-wrap">
+					<div class="speech-one">
+						<div class="emoji-one">💬</div>
+						<div class="bubble-one">{{config.details.bubbleone}}</div>
+					</div>
+				</div>
+				<div class="sub-wrap">
+					<div class="speech-two">
+						<div class="emoji-two">💬</div>
+						<div class="bubble-two">{{config.details.bubbletwo}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{{> components/body-end }}
+	</body>
+</html>
+
+<script>
+	$(document).ready(function() {
+		$(".emoji-one").click(function() {
+			$(".bubble-one").toggle()
+		})
+		$(".emoji-two").click(function() {
+			$(".bubble-two").toggle()
+		})
+	})
+</script>

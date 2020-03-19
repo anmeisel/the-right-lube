@@ -1,0 +1,39 @@
+<div class="right-lube-nav">
+	<div class="inline">
+		<div class="header">{{config.details.title}}</div>
+
+		<div class="title home"><a href="index.html">home</a></div>
+
+		<div class="title writing"><a href="writing.html">writing</a></div>
+
+		<!-- <div class="title hang-out"><a href="calendar.html">calendar</a></div> -->
+
+		<div class="title calendar">
+			<a class="title-toggle">calendar</a>
+			<div class="show-calendar">
+				{{# calendar }} 
+					{{# description_html }}
+						<span class="calendar-description"><br />
+							{{{ description_html }}}
+						</span>
+					{{/ description_html }}
+					{{# content_html }}
+						<span class="double-em">—</span> 
+						<span class="calendar-content">
+							{{{ content_html }}}
+						</span>
+					{{/ content_html }} 
+				{{/ calendar }}
+			</div>
+		</li>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".title-toggle").click(function(){
+    $(".show-calendar").toggle();
+    $(".bio").toggle();
+  });
+});
+</script>
