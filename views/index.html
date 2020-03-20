@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 {{> components/ascii }}
 <html lang="en">
-	<head>
-		{{> components/head }}
-	</head>
-	<body>
-		{{> components/nav }}
+    <head>
+        {{> components/head }}
+    </head>
+    <body>
+        {{> components/nav }}
 
-		<div class="speech-image">
-			<div class="socials">
-				<a href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
-				<a href="https://twitter.com/therightlube?lang=en"><i class="fa">&#xf099;</i></a>
-			</div>
-			<!-- <div class="gem"><img src="../assets/SickGentleFluke-max-1mb.gif"/></div> -->
-			<div class="bio">{{config.details.bio}}</div>
-			<div class="cover-photo"><img src="../assets/TRL.png"/></div>
-			<div class="subtitle">
-				<div class="sub-wrap">
-					<div class="speech-one">
-						<div class="emoji-one">💬</div>
-						<div class="bubble-one">
-							<!-- {{config.details.bubbleone}} -->
-							the right lube is a platform for thoughts by <div class="maz">Maz Murray</div> and <div class="hava">Hava Carvajal</div>, plus
-							anyone else who wants to join in!<br />
-							contact us at: <a href="mailto:therightlube@gmail.com">therightlube@gmail.com</a>
-						</div>
-					</div>
-				</div>
-				<div class="sub-wrap">
-					<div class="speech-two">
-						<div class="emoji-two">💬</div>
-						<div class="bubble-two">{{config.details.bubbletwo}}</div>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div class="speech-image">
+            <div class="socials">
+                <a target="_blank" href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
+                <a target="_blank" href="https://twitter.com/therightlube?lang=en"><i class="fa">&#xf099;</i></a>
+            </div>
+            <!-- <div class="gem"><img src="../assets/SickGentleFluke-max-1mb.gif"/></div> -->
+            <div class="bio">{{config.details.bio}}</div>
+            <div class="cover-photo"><img src="../assets/TRL.png"/></div>
+            <div class="subtitle">
+                <div class="sub-wrap">
+                    <div class="speech-one">
+                        <div class="emoji-one">💬</div>
+                        <div class="bubble-one">
+                            <!-- {{config.details.bubbleone}} -->
+                            the right lube is a platform for thoughts by <div class="maz">Maz Murray</div> and <div class="hava">Hava Carvajal</div>, plus
+                            anyone else who wants to join in!<br />
+                            contact us at: <a target="_blank" href="mailto:therightlube@gmail.com">therightlube@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-wrap">
+                    <div class="speech-two">
+                        <div class="emoji-two">💬</div>
+                        <div class="bubble-two">{{config.details.bubbletwo}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		{{> components/body-end }}
-	</body>
+        {{> components/body-end }}
+    </body>
 </html>
 
 <script>
-	$(document).ready(function() {
-		$(".emoji-one").click(function() {
-			$(".bubble-one").toggle()
-		})
-		$(".emoji-two").click(function() {
-			$(".bubble-two").toggle()
-		})
-	})
+    $(document).ready(function() {
+        $(".emoji-one").click(function() {
+            $(".bubble-one").toggle()
+        })
+        $(".emoji-two").click(function() {
+            $(".bubble-two").toggle()
+        })
+    })
 </script>
