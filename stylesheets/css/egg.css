@@ -89,7 +89,7 @@ a {
 }
 
 .socials {
-	position: absolute;
+	position: fixed;
 	right: 100px;
 	top: 0px;
 	transform: rotate(20deg);
