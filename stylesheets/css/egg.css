@@ -1,10 +1,46 @@
 html {
 	background-color: #afafaf;
+	/*background-color: pink;*/
+}
+
+@font-face {
+	font-family: "candy";
+	src: url("../../fonts/CandyPop-demo-font.woff2") format("woff2"), url("../../fonts/CandyPop-demo-font.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Kanisah";
+	src: url("../../fonts/Kanisah.woff2") format("woff2"), url("../../fonts/Kanisah.woff") format("woff");
+}
+
+@font-face {
+	font-family: "kerry";
+	src: url("../../fonts/RingofKerry.woff2") format("woff2"), url("../../fonts/RingofKerry.woff") format("woff");
+}
+
+@font-face {
+	font-family: "yellow";
+	src: url("../../fonts/yellow.woff2") format("woff2"), url("../../fonts/yellow.woff") format("woff");
+}
+
+body {
+	/*font-family: arial;*/
 }
 
 a {
 	text-decoration: none;
 	color: red;
+	font-family: "yellow";
+}
+
+.header {
+	font-family: "candy";
+	color: blue;
+}
+
+.bio {
+	font-family: "candy";
+	color: yellow;
 }
 
 .inline {
@@ -38,6 +74,10 @@ a {
 	text-align: left;
 }
 
+.socials a {
+	color: HotPink;
+}
+
 i {
 	margin: 10px;
 }
@@ -61,7 +101,7 @@ i {
 	position: absolute;
 	top: 60px;
 	width: 100%;
-	margin-left: 150px;
+	margin-left: 250px;
 }
 
 .sub-wrap {
@@ -114,6 +154,16 @@ i {
 	width: 250px;
 }
 
+.maz {
+	display: inline-block;
+	font-family: "kerry";
+}
+
+.hava {
+	display: inline-block;
+	font-family: "Kanisah";
+}
+
 /*writing*/
 
 .arena-block {
@@ -137,8 +187,15 @@ i {
 }
 
 #arena-block-title {
-	font-size: 1.5em;
+	font-family: "yellow";
+	font-size: 1em;
 	font-style: bold;
+	color: HotPink;
+}
+
+h2 {
+	display: inline-block;
+	margin: 0;
 }
 
 .description {
@@ -147,10 +204,12 @@ i {
 }
 
 .more {
-	cursor: pointer;
 	display: inline-block;
+	font-family: inital;
+	font-size: 1em;
+	color: blue;
 	margin-left: 10px;
-	font-size: 0.5em;
+	cursor: pointer;
 }
 
 .reverse {
