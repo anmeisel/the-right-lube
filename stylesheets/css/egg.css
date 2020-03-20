@@ -40,7 +40,7 @@ a {
 
 .bio {
 	font-family: "candy";
-	color: yellow;
+	color: HotPink;
 }
 
 .inline {
@@ -93,7 +93,7 @@ i {
 }
 
 .speech-image img {
-	border: solid 2px yellow;
+	border: solid 2px HotPink;
 	margin: 20px;
 }
 
