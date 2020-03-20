@@ -74,6 +74,7 @@ a {
 .show-calendar {
 	display: none;
 	text-align: left;
+	font-size: initial;
 }
 
 /*.gem {
