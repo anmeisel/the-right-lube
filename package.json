@@ -1,8 +1,9 @@
 {
-  "name": "im-sorry-i-have-2-leave-the-lobby-but-i-will-never-forget-you",
+  "name": "right-lube",
   "version": "0.1.0",
-  "description": "an ok node.js framework",
+  "description": "for the right lube (hava and maz)",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "node index.js"
   },
@@ -12,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mwvd/im-sorry-i-have-2-leave-the-lobby-but-i-will-never-forget-you.git"
+    "url": "git+https://github.com/anmeisel/the-right-lube.git"
   },
-  "author": "4 us & 4 others",
+  "author": "ana meisal <ana@4us4others.com> (https://ana.lol/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mwvd/im-sorry-i-have-2-leave-the-lobby-but-i-will-never-forget-you/issues"
+    "url": "https://github.com/anmeisel/the-right-lube/issues"
   },
-  "homepage": "https://github.com/mwvd/im-sorry-i-have-2-leave-the-lobby-but-i-will-never-forget-you#readme",
+  "homepage": "https://github.com/anmeisel/the-right-lube#readme",
   "dependencies": {
     "are.na": "^0.1.3",
     "compression": "^1.7.4",
@@ -56,67 +57,49 @@
   "prettier": {
     "printWidth": 160,
     "tabWidth": 4,
-    "useTabs": true,
+    "useTabs": false,
     "semi": false,
     "bracketSpacing": true,
     "overrides": [
       {
-        "files": [
-          "index.js",
-          "*.js"
-        ],
+        "files": ["index.js", "*.js"],
         "options": {
           "tabWidth": 2,
-          "useTabs": false,
           "semi": false,
           "singleQuote": true
         }
       },
       {
-        "files": [
-          "*.html"
-        ],
+        "files": ["*.html"],
         "options": {
           "parser": "html",
-          "htmlWhitespaceSensitivity": "strict"
+          "tabWidth": 4,
+          "htmlWhitespaceSensitivity": "strict",
+          "jsxBracketSameLine": false
         }
       },
       {
         "files": "*.json",
         "options": {
           "tabWidth": 2,
-          "useTabs": false,
           "parser": "json"
         }
       }
     ]
   },
-  "prettierIgnore": [
-    "js/lib*",
-    "*.min.js",
-    "*.css",
-    "assets*",
-    "fonts*"
-  ],
+  "prettierIgnore": ["js/vendor*", "*.min.js", "*.css", "assets*", "fonts*"],
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 2017
     },
     "env": {
-      "es6": true
+      "es6": true,
+      "browser": true,
+      "jquery": true
     },
-    "extends": [
-      "eslint:recommended",
-      "airbnb-base",
-      "prettier"
-    ],
-    "plugins": [
-      "prettier"
-    ],
+    "extends": ["eslint:recommended", "airbnb-base", "prettier"],
+    "plugins": ["prettier"],
     "rules": {
-      "func-names": "off",
-      "no-console": "warn",
-      "prefer-destructuring": "off",
       "array-bracket-spacing": [
         0,
         "always",
@@ -124,19 +107,13 @@
           "objectsInArrays": false
         }
       ],
-      "object-curly-spacing": [
-        "warn",
-        "always"
-      ],
-      "prettier/prettier": [
-        "warn"
-      ]
+      "func-names": ["off"],
+      "no-console": ["warn"],
+      "no-underscore-dangle": ["off"],
+      "object-curly-spacing": ["warn", "always"],
+      "prefer-destructuring": ["off"],
+      "prettier/prettier": ["warn"]
     }
   },
-  "eslintIgnore": [
-    "js/lib*",
-    "assets*",
-    "fonts*",
-    "Gruntfile.js"
-  ]
+  "eslintIgnore": ["js/vendor*", "assets*", "fonts*", "Gruntfile.js"]
 }
