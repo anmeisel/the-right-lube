@@ -11,29 +11,31 @@
 		<div class="title calendar">
 			<a class="title-toggle">calendar</a>
 			<div class="show-calendar">
-				{{# calendar }} 
-					{{# description_html }}
-						<span class="calendar-description"><br />
-							{{{ description_html }}}
-						</span>
-					{{/ description_html }}
-					{{# content_html }}
-						<span class="double-em">—</span> 
-						<span class="calendar-content">
-							{{{ content_html }}}
-						</span>
-					{{/ content_html }} 
-				{{/ calendar }}
+				{{# calendar }} {{# description_html }}
+				<span class="calendar-description"
+					><br />
+					{{{ description_html }}}
+				</span>
+				{{/ description_html }} {{# content_html }}
+				<span class="double-em">—</span>
+				<span class="calendar-content">
+					{{{ content_html }}}
+				</span>
+				{{/ content_html }} {{/ calendar }}
 			</div>
-		</li>
+		</div>
+	</div>
+	<div class="socials">
+		<a target="_blank" href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
+		<a target="_blank" href="https://twitter.com/therightlube?lang=en"><i class="fa">&#xf099;</i></a>
 	</div>
 </div>
 
 <script>
-$(document).ready(function(){
-  $(".title-toggle").click(function(){
-    $(".show-calendar").toggle();
-    $(".bio").toggle();
-  });
-});
+	$(document).ready(function() {
+		$(".title-toggle").click(function() {
+			$(".show-calendar").toggle()
+			$(".bio").toggle()
+		})
+	})
 </script>
