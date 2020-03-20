@@ -40,7 +40,8 @@ a {
 
 .bio {
 	font-family: "candy";
-	color: HotPink;
+	color: red;
+	font-size: 1.1em;
 }
 
 .inline {
@@ -48,6 +49,7 @@ a {
 	width: 100%;
 	margin: 0 auto;
 	text-align: center;
+	font-size: 1.2em;
 }
 
 .title,
@@ -74,8 +76,27 @@ a {
 	text-align: left;
 }
 
+/*.gem {
+	position: fixed;
+	left: 100px;
+	top: 0px;
+	transform: rotate(-20deg);
+}*/
+
+.gem img {
+	width: 100px;
+}
+
+.socials {
+	position: absolute;
+	right: 100px;
+	top: 0px;
+	transform: rotate(20deg);
+}
+
 .socials a {
 	color: HotPink;
+	font-size: 1.5em;
 }
 
 i {
@@ -92,16 +113,16 @@ i {
 	position: relative;
 }
 
-.speech-image img {
-	border: solid 2px HotPink;
+.cover-photo img {
+	border: solid 3px HotPink;
 	margin: 20px;
 }
 
 .subtitle {
 	position: absolute;
-	top: 60px;
+	top: 175px;
 	width: 100%;
-	margin-left: 250px;
+	margin-left: 160px;
 }
 
 .sub-wrap {
@@ -116,7 +137,7 @@ i {
 }
 
 .speech-two {
-	margin-left: 500px;
+	margin-left: 530px;
 	margin-top: 100px;
 }
 
@@ -141,10 +162,10 @@ i {
 .bubble-one,
 .bubble-two {
 	position: absolute;
-	background-color: pink;
-	padding: 5px;
-	border: solid 2px red;
+	border: solid 3px HotPink;
+	background-color: #afafaf;
 	color: red;
+	padding: 5px;
 	text-align: left;
 	display: none;
 	z-index: 1;

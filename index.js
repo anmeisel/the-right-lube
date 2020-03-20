@@ -61,7 +61,7 @@ app.get('/', async function(req, res) {
 				// append `?view=calendar` to the end of your URL to see "calendar" as JSON
 				res.send(calendar)
 			} else {
-				res.render('index.html', {
+				res.render('writing.html', {
 					static_url: cdn,
 					config,
 					calendar,

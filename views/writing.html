@@ -61,8 +61,11 @@
 <script>
 	$(document).ready(function() {
 		$(".more").click(function() {
-			$(".arena-block").toggleClass("peek")
-			$(".more").toggleClass("reverse")
+			$(this)
+				.parent()
+				.parent()
+				.toggleClass("peek")
+			$(this).toggleClass("reverse")
 		})
 	})
 </script>
