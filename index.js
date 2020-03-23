@@ -99,6 +99,20 @@ app.get('/writing', async function(req, res) {
       const config = yaml.safeLoad(channel.metadata.description) // get our site description from our are.na channel description - since it is loaded in as yaml, we can access it's values with `config.key`, ex: for title, we can use `config.details.title`
       const contents = channel.contents // clean up the results a little bit, and make the channel's contents available as a constant, `contents`
 
+      // const updatedContents = []
+      contents.forEach(contentItem => {
+        var trunc = contentItem.title
+        trunc = trunc
+          .replace(/\s+/g, '-')
+          .replace('€', 'e')
+          .replace('£', 'e')
+          .replace('$', 's')
+          .toLowerCase()
+        contentItem.truncTitle = trunc
+        // console.log(contentItem.truncTitle)
+        // // updatedContents.push(contentItem)
+      })
+
       const calendar = contents.pop() // pop last block (in this case, "calendar"), out of array, and then pass it to the render below
 
       if (view === 'channel') {
@@ -107,6 +121,16 @@ app.get('/writing', async function(req, res) {
       } else if (view === 'calendar') {
         // append `?view=calendar` to the end of your URL to see "calendar" as JSON
         res.send(calendar)
+      } else if (view) {
+        // get our URL contents and pass them to the view
+        const writing = req.query
+        res.render('writing.html', {
+          static_url: cdn,
+          config,
+          writing,
+          calendar,
+          arena: contents // pass our are.na channel contents into the render for use w mustache.js by using `{{arena}}` - see views/arena.html
+        })
       } else {
         res.render('writing.html', {
           static_url: cdn,
