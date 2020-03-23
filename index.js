@@ -18,7 +18,7 @@ if (environment === 'now') {
 } else {
   cache = yaml.safeLoad(fs.readFileSync('./api/config.yaml', 'utf8'))
 }
-const channelCache = require('./api/blog.json')
+const channelCache = require('./api/writing.json')
 
 const app = express()
 
