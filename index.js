@@ -99,7 +99,6 @@ app.get('/writing', async function(req, res) {
       const config = yaml.safeLoad(channel.metadata.description) // get our site description from our are.na channel description - since it is loaded in as yaml, we can access it's values with `config.key`, ex: for title, we can use `config.details.title`
       const contents = channel.contents // clean up the results a little bit, and make the channel's contents available as a constant, `contents`
 
-      // const updatedContents = []
       contents.forEach(contentItem => {
         var trunc = contentItem.title
         trunc = trunc
@@ -110,7 +109,6 @@ app.get('/writing', async function(req, res) {
           .toLowerCase()
         contentItem.truncTitle = trunc
         // console.log(contentItem.truncTitle)
-        // // updatedContents.push(contentItem)
       })
 
       const calendar = contents.pop() // pop last block (in this case, "calendar"), out of array, and then pass it to the render below
