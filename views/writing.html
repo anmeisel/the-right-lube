@@ -75,6 +75,10 @@
                 .parent()
                 .toggleClass("peek")
             $(this).toggleClass("reverse")
+            const id = this.id.slice(5)
+            const trunc = $(this).parent().attr("id");
+            console.log(`trunc = ${trunc}`)
+            window.history.pushState("object or string", "Title", `?view=writing&post=${id}#${trunc}`);
         })
     })
 </script>
