@@ -121,10 +121,12 @@ i {
 }
 
 .subtitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 175px;
-    width: 100%;
-    margin-left: 160px;
+    top: 500px;
+    margin-left: 100px;
 }
 
 .sub-wrap {
@@ -133,13 +135,15 @@ i {
     width: 300px;
 }
 
-.speech-tone,
+.speech-one,
 .speech-two {
     position: absolute;
+    margin-left: 50px;
 }
 
 .speech-two {
-    margin-left: 530px;
+    position: absolute;
+    margin-left: 0px;
     margin-top: 100px;
 }
 
