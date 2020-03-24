@@ -1,14 +1,15 @@
 <div class="right-lube-nav">
 	<div class="inline">
-		<div class="header">{{config.details.title}}</div>
+		<label>friendly look <input type="checkbox" id="textCheckbox"/></label>
+		<div class="header access">{{config.details.title}}</div>
 
-		<div class="title home"><a href="/">home</a></div>
+		<div class="title home access"><a href="/">home</a></div>
 
-		<div class="title writing"><a href="/writing">writing</a></div>
+		<div class="title writing access"><a href="/writing">writing</a></div>
 
 		<!-- <div class="title hang-out"><a href="calendar.html">calendar</a></div> -->
 
-		<div class="title calendar">
+		<div class="title calendar access">
 			<a class="title-toggle">calendar</a>
 			<div class="show-calendar">
 				{{# calendar }} {{# description_html }}
@@ -25,7 +26,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="socials">
+	<div class="socials access">
 		<a target="_blank" href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
 		<a target="_blank" href="https://twitter.com/therightlube?lang=en"><i class="fa">&#xf099;</i></a>
 	</div>
@@ -36,6 +37,17 @@
 		$(".title-toggle").click(function() {
 			$(".show-calendar").toggle()
 			$(".bio").toggle()
+		})
+	})
+
+	// checkbox
+	$(document).ready(function() {
+		$("#textCheckbox").on("click", function() {
+			if ($(this).is(":checked")) {
+				$(".access").addClass("dark")
+			} else {
+				$(".access").removeClass("dark")
+			}
 		})
 	})
 </script>
