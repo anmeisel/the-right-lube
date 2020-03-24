@@ -103,12 +103,12 @@ a {
 
 label {
 	position: fixed;
-	width: 100px;
+	width: 80px;
 	text-align: left;
 	left: 10px;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 	color: black;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	z-index: 9;
 }
 
@@ -117,7 +117,7 @@ label {
 .dark p,
 .dark div {
 	color: black;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
