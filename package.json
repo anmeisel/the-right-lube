@@ -24,6 +24,7 @@
   "dependencies": {
     "are.na": "^0.1.3",
     "compression": "^1.7.4",
+    "detect-libc": "^1.0.3",
     "dotenv-flow": "^3.1.0",
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
@@ -31,6 +32,8 @@
     "liquid": "^4.0.1",
     "mustache": "^4.0.0",
     "mustache-express": "^1.3.0",
+    "needle": "^2.4.1",
+    "semver": "^7.3.2",
     "yaml": "^1.8.2"
   },
   "devDependencies": {
@@ -62,7 +65,10 @@
     "bracketSpacing": true,
     "overrides": [
       {
-        "files": ["index.js", "*.js"],
+        "files": [
+          "index.js",
+          "*.js"
+        ],
         "options": {
           "tabWidth": 2,
           "semi": false,
@@ -70,7 +76,9 @@
         }
       },
       {
-        "files": ["*.html"],
+        "files": [
+          "*.html"
+        ],
         "options": {
           "parser": "html",
           "tabWidth": 4,
@@ -87,7 +95,13 @@
       }
     ]
   },
-  "prettierIgnore": ["js/vendor*", "*.min.js", "*.css", "assets*", "fonts*"],
+  "prettierIgnore": [
+    "js/vendor*",
+    "*.min.js",
+    "*.css",
+    "assets*",
+    "fonts*"
+  ],
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 2017
@@ -97,8 +111,14 @@
       "browser": true,
       "jquery": true
     },
-    "extends": ["eslint:recommended", "airbnb-base", "prettier"],
-    "plugins": ["prettier"],
+    "extends": [
+      "eslint:recommended",
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "array-bracket-spacing": [
         0,
@@ -107,13 +127,31 @@
           "objectsInArrays": false
         }
       ],
-      "func-names": ["off"],
-      "no-console": ["warn"],
-      "no-underscore-dangle": ["off"],
-      "object-curly-spacing": ["warn", "always"],
-      "prefer-destructuring": ["off"],
-      "prettier/prettier": ["warn"]
+      "func-names": [
+        "off"
+      ],
+      "no-console": [
+        "warn"
+      ],
+      "no-underscore-dangle": [
+        "off"
+      ],
+      "object-curly-spacing": [
+        "warn",
+        "always"
+      ],
+      "prefer-destructuring": [
+        "off"
+      ],
+      "prettier/prettier": [
+        "warn"
+      ]
     }
   },
-  "eslintIgnore": ["js/vendor*", "assets*", "fonts*", "Gruntfile.js"]
+  "eslintIgnore": [
+    "js/vendor*",
+    "assets*",
+    "fonts*",
+    "Gruntfile.js"
+  ]
 }
