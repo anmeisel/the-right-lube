@@ -77,13 +77,6 @@ a {
 	font-size: initial;
 }
 
-/*.gem {
-	position: fixed;
-	left: 100px;
-	top: 0px;
-	transform: rotate(-20deg);
-}*/
-
 .gem img {
 	width: 100px;
 }
@@ -101,50 +94,77 @@ a {
 	font-size: 1.5em;
 }
 
-label {
+.reading-mode {
 	position: fixed;
-	width: 80px;
-	text-align: left;
-	left: 10px;
-	font-family: "Comic Sans MS", cursive, sans-serif;
-	color: black;
-	font-size: 1rem;
 	z-index: 9;
 }
 
-.dark,
-.dark a,
-.dark p,
-.dark div {
+.drop-down-label {
+	width: 80px;
+	text-align: left;
+	left: 10px;
+	color: black;
+	font-size: 1rem;
+}
+
+button,
+select,
+input {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	padding: 0px 4px 2px 4px;
+}
+
+button:focus,
+select:focus,
+input:focus {
+	outline: 0;
+}
+
+select#drop-down {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: initial;
+	margin-top: 5px;
+	left: 10px;
+	border: 1px solid black;
+	background: transparent;
+	z-index: 9;
+	cursor: pointer;
+	border-radius: 0px;
+	display: block;
+	font-size: 1rem;
+}
+
+#drop-down input {
+	opacity: 0;
+}
+
+body.accessibility {
 	color: black;
 	font-size: 1rem;
 	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-.dark a {
+.accessibility p a {
 	text-decoration: underline;
 }
 
-.bubble-one p,
-.bubble-two p {
-	display: inline;
-	margin: 0px;
-}
-
-.dark .emoji-one,
-.dark .emoji-two {
-	font-size: 2rem;
-}
-
-.dark span.description {
-	margin-bottom: 10px;
+.accessibility,
+.accessibility p,
+.accessibility div,
+.accessibility div a,
+.accessibility div span {
+	color: black;
+	font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 i {
 	margin: 10px;
 }
 
-.speech-image {
+.speech-image,
+.newsletter {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -154,7 +174,7 @@ i {
 	position: relative;
 }
 
-.cover-photo img {
+.coverimage img {
 	border: solid 3px HotPink;
 	margin: 20px;
 }
@@ -164,7 +184,7 @@ i {
 	align-items: center;
 	justify-content: center;
 	position: absolute;
-	top: 500px;
+	top: 350px;
 	margin-left: 100px;
 }
 
@@ -235,6 +255,26 @@ i {
 }
 
 /*writing*/
+
+.signup {
+	display: inline-block;
+	text-align: left;
+	width: 80%;
+	margin: 50px 20px 40px 20px;
+}
+
+.newsletter input {
+	display: inline-block;
+	position: relative;
+	margin: 0px;
+	border: 1px solid black;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border: 1px solid black;
+	background: transparent;
+	font-size: 1rem;
+}
 
 .arena-block {
 	margin: 20px;

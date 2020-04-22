@@ -1,15 +1,24 @@
 <div class="right-lube-nav">
 	<div class="inline">
-		<label>friendly look <input type="checkbox" id="textCheckbox"/></label>
-		<div class="header access">{{config.details.title}}</div>
+		<div class="reading-mode">
+			<div class="drop-down-label">Reading mode:</div>
+			<select id="drop-down">
+				<option value="journal" selected>TRL</option>
+				<option value="friendly">Friendly</option>
+				<!-- <option value="dark">Dark</option> -->
+			</select>
+		</div>
+		<!-- <label>friendly <input type="checkbox" id="textCheckbox"/></label> -->
 
-		<div class="title home access"><a href="/">home</a></div>
+		<div class="header">{{config.details.title}}</div>
 
-		<div class="title writing access"><a href="/writing">writing</a></div>
+		<div class="title home"><a href="/">home</a></div>
+
+		<div class="title writing"><a href="/writing">writing</a></div>
 
 		<!-- <div class="title hang-out"><a href="calendar.html">calendar</a></div> -->
 
-		<div class="title calendar access">
+		<div class="title calendar">
 			<a class="title-toggle">calendar</a>
 			<div class="show-calendar">
 				{{# calendar }} {{# description_html }}
@@ -26,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="socials access">
+	<div class="socials">
 		<a target="_blank" href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
 		<a target="_blank" href="https://twitter.com/therightlube?lang=en"><i class="fa">&#xf099;</i></a>
 	</div>
@@ -40,14 +49,49 @@
 		})
 	})
 
-	// checkbox
-	$(document).ready(function() {
-		$("#textCheckbox").on("click", function() {
-			if ($(this).is(":checked")) {
-				$(".access").addClass("dark")
-			} else {
-				$(".access").removeClass("dark")
-			}
-		})
+	function createCookie(name, value, days) {
+		if (days) {
+			var date = new Date()
+			date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+			var expires = "; expires=" + date.toGMTString()
+		} else var expires = ""
+		document.cookie = name + "=" + value + expires + "; path=/"
+	}
+
+	function readCookie(name) {
+		var nameEQ = name + "="
+		var ca = document.cookie.split(";")
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i]
+			while (c.charAt(0) == " ") c = c.substring(1, c.length)
+			if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length)
+		}
+		return null
+	}
+
+	function eraseCookie(name) {
+		createCookie(name, "", -1)
+	}
+
+	function theme_friendly() {
+		$(".access").toggleClass("accessibility")
+	}
+
+	$("#drop-down").change(function() {
+		const selected = $(this).val()
+		if (selected === "friendly") {
+			theme_friendly()
+			createCookie("cookie", "cookieaccess", 1000)
+		} else {
+			theme_friendly()
+			eraseCookie("cookie", "cookieaccess")
+		}
 	})
+
+	if (readCookie("cookie")) {
+		theme_friendly()
+		$("#drop-down")
+			.val("friendly")
+			.selected()
+	}
 </script>

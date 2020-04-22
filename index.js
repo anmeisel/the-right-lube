@@ -54,17 +54,23 @@ app.get('/', async function(req, res) {
 
       const calendar = contents.pop() // pop last block (in this case, "calendar"), out of array, and then pass it to the render below
 
+      const coverimage = contents.pop(1)
+
       if (view === 'channel') {
         // append `?view=channel` to the end of your URL to see "channel" as JSON
         res.send(contents)
       } else if (view === 'calendar') {
         // append `?view=calendar` to the end of your URL to see "calendar" as JSON
         res.send(calendar)
+      } else if (view === 'coverimage') {
+        // append `?view=coverimage` to the end of your URL to see "coverimage" as JSON
+        res.send(coverimage)
       } else {
         res.render('index.html', {
           static_url: cdn,
           config,
           calendar,
+          coverimage,
           arena: contents // pass our are.na channel contents into the render for use w mustache.js by using `{{arena}}` - see views/arena.html
         })
       }
@@ -113,12 +119,17 @@ app.get('/writing', async function(req, res) {
 
       const calendar = contents.pop() // pop last block (in this case, "calendar"), out of array, and then pass it to the render below
 
+      const coverimage = contents.pop(1)
+
       if (view === 'channel') {
         // append `?view=channel` to the end of your URL to see "channel" as JSON
         res.send(contents)
       } else if (view === 'calendar') {
         // append `?view=calendar` to the end of your URL to see "calendar" as JSON
         res.send(calendar)
+      } else if (view === 'coverimage') {
+        // append `?view=coverimage` to the end of your URL to see "coverimage" as JSON
+        res.send(coverimage)
       } else if (view) {
         // get our URL contents and pass them to the view
         const writing = req.query
@@ -127,6 +138,7 @@ app.get('/writing', async function(req, res) {
           config,
           writing,
           calendar,
+          coverimage,
           arena: contents // pass our are.na channel contents into the render for use w mustache.js by using `{{arena}}` - see views/arena.html
         })
       } else {
