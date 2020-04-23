@@ -21,17 +21,17 @@
 		<div class="title calendar">
 			<a class="title-toggle">calendar</a>
 			<div class="show-calendar">
-				{{# calendar }} {{# description_html }}
-				<span class="calendar-description"
-					><br />
-					{{{ description_html }}}
-				</span>
-				{{/ description_html }} {{# content_html }}
-				<span class="double-em">—</span>
-				<span class="calendar-content">
-					{{{ content_html }}}
-				</span>
-				{{/ content_html }} {{/ calendar }}
+				<div class="inner-calendar">
+					{{# calendar }} {{# description_html }}
+					<span class="calendar-description">
+						{{{ description_html }}}
+					</span>
+					{{/ description_html }} {{# content_html }}
+					<span class="calendar-content">
+						{{{ content_html }}}
+					</span>
+					{{/ content_html }} {{/ calendar }}
+				</div>
 			</div>
 		</div>
 	</div>

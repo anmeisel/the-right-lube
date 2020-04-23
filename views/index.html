@@ -10,43 +10,39 @@
         <div class="speech-image">
             <!-- <div class="gem"><img src="../assets/SickGentleFluke-max-1mb.gif"/></div> -->
             <div class="bio">{{config.details.bio}}</div>
-                <div class="coverimage">
-                    {{# coverimage }} 
-                    {{# description_html }}
-                        {{{ description_html }}}
-                    {{/ description_html }} 
-                    {{# embed }}
-                        <div id="embed-block_{{ id }}" class="embed-block">{{{ html }}} </div>
-                        {{/ embed }} {{^ embed }} {{# source }} {{# url }}
-                        <a target="_blank" href="{{ url }}">{{ url }}</a>
-                        {{/ url }} {{# image }}
-                        <div class="url-block">
-                            <img id="url-block-image_{{ id }}" class="url-block-image" src="{{# display }}{{{ url }}}{{/ display }}" />
-                        </div>
-                        {{/ image }} {{/ source }} {{^ source }} {{# attachment }}
-                        <div id="video-block_{{ id }}" class="video-block">
-                            <video id="video-block-attachment_{{ id }}" class="video-block-attachment" loop controls playsinline autoplay muted preload="auto">
-                                <source src="{{{ static_url }}}{{ file_name }}" type="{{{ content_type }}}" />
-                            </video>
-                        </div>
-                        {{/ attachment }} {{# image }}
-                        <div class="image-block">
-                            <img id="image-block-image_{{ id }}" class="image-block-image" src="{{# display }}{{{ url }}}{{/ display }}" />
-                        </div>
-                        {{/ image }} {{/ source }} {{/ embed }}<br />
-                    {{# content_html }}
-                        {{{ content_html }}}
-                    {{/ content_html }} {{/ coverimage }}
+            <div class="coverimage">
+                {{# coverimage }} {{# description_html }} {{{ description_html }}} {{/ description_html }} {{# embed }}
+                <div id="embed-block_{{ id }}" class="embed-block">{{{ html }}} </div>
+                {{/ embed }} {{^ embed }} {{# source }} {{# url }}
+                <a target="_blank" href="{{ url }}">{{ url }}</a>
+                {{/ url }} {{# image }}
+                <div class="url-block">
+                    <img id="url-block-image_{{ id }}" class="url-block-image" src="{{# display }}{{{ url }}}{{/ display }}" />
                 </div>
+                {{/ image }} {{/ source }} {{^ source }} {{# attachment }}
+                <div id="video-block_{{ id }}" class="video-block">
+                    <video id="video-block-attachment_{{ id }}" class="video-block-attachment" loop controls playsinline autoplay muted preload="auto">
+                        <source src="{{{ static_url }}}{{ file_name }}" type="{{{ content_type }}}" />
+                    </video>
+                </div>
+                {{/ attachment }} {{# image }}
+                <div class="image-block">
+                    <img id="image-block-image_{{ id }}" class="image-block-image" src="{{# display }}{{{ url }}}{{/ display }}" />
+                </div>
+                {{/ image }} {{/ source }} {{/ embed }}<br />
+                {{# content_html }} {{{ content_html }}} {{/ content_html }} {{/ coverimage }}
+            </div>
             <div class="subtitle">
                 <div class="sub-wrap">
                     <div class="speech-one">
                         <div class="emoji-one">🗯️</div>
                         <div class="bubble-one">
                             <!-- {{config.details.bubbleone}} -->
-                            <p>the right lube is a platform for thoughts by <div class="maz">Maz Murray</div> and <div class="hava">Hava Carvajal</div>, plus
-                            anyone else who wants to join in!<br />
-                            contact us at: <a target="_blank" href="mailto:therightlube@gmail.com">therightlube@gmail.com</a></p>
+                            <p
+                                >the right lube is a platform for thoughts by <span class="maz">Maz Murray</span> and <span class="hava">Hava Carvajal</span>,
+                                plus anyone else who wants to join in!<br />
+                                contact us at: <a target="_blank" href="mailto:therightlube@gmail.com">therightlube@gmail.com</a></p
+                            >
                         </div>
                     </div>
                 </div>

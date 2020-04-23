@@ -75,6 +75,25 @@ a {
 	display: none;
 	text-align: left;
 	font-size: initial;
+	width: 100%;
+}
+
+.inner-calendar {
+	width: 75vw;
+	margin-top: 20px;
+	padding: 5px 20px 0px 20px;
+	position: relative;
+	left: calc(-59.5vw + 50%);
+	border: 1px solid black;
+}
+
+.calendar-description {
+	color: rgba(0, 0, 0, 0.6);
+}
+
+.calendar-content p {
+	display: inline-block;
+	margin-right: 30px;
 }
 
 .gem img {
@@ -83,7 +102,7 @@ a {
 
 .socials {
 	position: fixed;
-	right: 100px;
+	right: 85px;
 	top: 100px;
 	transform: rotate(20deg);
 	z-index: 9;
@@ -238,6 +257,12 @@ i {
 	margin-left: 20px;
 	margin-right: 20px;
 	width: 250px;
+}
+
+.bubble-one p,
+.bubble-two p {
+	display: inline-block;
+	margin: 0px;
 }
 
 .bubble-one {
