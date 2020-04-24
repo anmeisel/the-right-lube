@@ -6,10 +6,7 @@
     </head>
     <body class="access">
         {{> components/nav }}
-
         <div class="speech-image">
-            <!-- <div class="gem"><img src="../assets/SickGentleFluke-max-1mb.gif"/></div> -->
-            <div class="bio">{{config.details.bio}}</div>
             <div class="coverimage">
                 {{# coverimage }} {{# description_html }} {{{ description_html }}} {{/ description_html }} {{# embed }}
                 <div id="embed-block_{{ id }}" class="embed-block">{{{ html }}} </div>
@@ -29,8 +26,8 @@
                 <div class="image-block">
                     <img id="image-block-image_{{ id }}" class="image-block-image" src="{{# display }}{{{ url }}}{{/ display }}" />
                 </div>
-                {{/ image }} {{/ source }} {{/ embed }}<br />
-                {{# content_html }} {{{ content_html }}} {{/ content_html }} {{/ coverimage }}
+                {{/ image }} {{/ source }} {{/ embed }} {{# content_html }} {{{ content_html }}} {{/ content_html }} {{/ coverimage }}
+                <div class="bio">{{config.details.bio}}</div>
             </div>
             <div class="subtitle">
                 <div class="sub-wrap">
