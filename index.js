@@ -56,6 +56,8 @@ app.get('/', async function(req, res) {
 
       const coverimage = contents.pop(1)
 
+      const links = contents.pop(2)
+
       if (view === 'channel') {
         // append `?view=channel` to the end of your URL to see "channel" as JSON
         res.send(contents)
@@ -65,12 +67,16 @@ app.get('/', async function(req, res) {
       } else if (view === 'coverimage') {
         // append `?view=coverimage` to the end of your URL to see "coverimage" as JSON
         res.send(coverimage)
+      } else if (view === 'links') {
+        // append `?view=links` to the end of your URL to see "links" as JSON
+        res.send(links)
       } else {
         res.render('index.html', {
           static_url: cdn,
           config,
           calendar,
           coverimage,
+          links,
           arena: contents // pass our are.na channel contents into the render for use w mustache.js by using `{{arena}}` - see views/arena.html
         })
       }
@@ -121,6 +127,8 @@ app.get('/writing', async function(req, res) {
 
       const coverimage = contents.pop(1)
 
+      const links = contents.pop(2)
+
       if (view === 'channel') {
         // append `?view=channel` to the end of your URL to see "channel" as JSON
         res.send(contents)
@@ -130,6 +138,9 @@ app.get('/writing', async function(req, res) {
       } else if (view === 'coverimage') {
         // append `?view=coverimage` to the end of your URL to see "coverimage" as JSON
         res.send(coverimage)
+      } else if (view === 'links') {
+        // append `?view=links` to the end of your URL to see "links" as JSON
+        res.send(links)
       } else if (view) {
         // get our URL contents and pass them to the view
         const writing = req.query
@@ -139,6 +150,7 @@ app.get('/writing', async function(req, res) {
           writing,
           calendar,
           coverimage,
+          links,
           arena: contents // pass our are.na channel contents into the render for use w mustache.js by using `{{arena}}` - see views/arena.html
         })
       } else {
@@ -157,6 +169,53 @@ app.get('/writing', async function(req, res) {
 
       console.log(err)
       res.render('writing.html', {
+        title: 'Error 😭',
+        static_url: cdn,
+        config: cache
+      })
+    })
+})
+
+app.get('/archive', async function(req, res) {
+  const view = req.query.view
+  const arena = new Arena({ accessToken: process.env.arenaPAT })
+  arena
+    .channel(process.env.arenaChannel)
+    .get({
+      page: 1, // get the first page of results
+      per: 64, // get 64 items per call (max: 100) - play around w this for performance
+      direction: 'desc' // ask API v nicely to sort blocks by most recent
+    })
+    .then(channel => {
+      // fetch our whole are.na channel as `channel`
+
+      const config = yaml.safeLoad(channel.metadata.description) // get our site description from our are.na channel description - since it is loaded in as yaml, we can access it's values with `config.key`, ex: for title, we can use `config.details.title`
+      const contents = channel.contents // clean up the results a little bit, and make the channel's contents available as a constant, `contents`
+
+      const calendar = contents.pop() // pop last block (in this case, "calendar"), out of array, and then pass it to the render below
+
+      if (view === 'channel') {
+        // append `?view=channel` to the end of your URL to see "channel" as JSON
+        res.send(contents)
+      } else if (view === 'calendar') {
+        // append `?view=calendar` to the end of your URL to see "calendar" as JSON
+        res.send(calendar)
+      } else {
+        res.render('archive.html', {
+          static_url: cdn,
+          config,
+          calendar,
+          arena: contents // pass our are.na channel contents into the render for use w mustache.js by using `{{arena}}` - see views/arena.html
+        })
+      }
+    })
+    .catch(err => {
+      // handle errors
+
+      cache.details.title = 'Error 😭' // change the value of cache.details.title (loaded from ./api/config.yaml) to reflect an error
+
+      console.log(err)
+      res.render('archive.html', {
         title: 'Error 😭',
         static_url: cdn,
         config: cache

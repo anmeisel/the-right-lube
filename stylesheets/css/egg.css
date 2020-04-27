@@ -74,11 +74,13 @@ a {
 
 .inner-calendar {
 	width: 75vw;
-	margin-top: 20px;
+	margin-top: 15px;
 	padding: 5px 20px 0px 20px;
 	position: relative;
-	left: calc(-53vw + 50%);
+	left: calc(-46.2vw + 50%);
 	border: 1px solid black;
+	background-color: #afafaf;
+	z-index: 1;
 }
 
 .calendar-description {
@@ -99,7 +101,7 @@ a {
 	right: 125px;
 	top: 100px;
 	transform: rotate(20deg);
-	z-index: 9;
+	z-index: 2;
 }
 
 .socials a {
@@ -167,6 +169,8 @@ body.accessibility {
 .accessibility p,
 .accessibility div,
 .accessibility div a,
+.accessibility div p,
+.accessibility div h2,
 .accessibility div span {
 	color: black;
 	font-family: "Comic Sans MS", cursive, sans-serif;
@@ -174,14 +178,6 @@ body.accessibility {
 
 i {
 	margin: 10px;
-}
-
-.home {
-	text-align: left;
-}
-
-.calendar {
-	text-align: right;
 }
 
 .bio,
@@ -210,8 +206,30 @@ i {
 	z-index: -1;
 }
 
+.links {
+	border: 1px solid blue;
+	margin: 20px 0px 10px 0px;
+	width: 20vw;
+	position: absolute;
+	bottom: 0px;
+	padding: 5px;
+	text-align: left;
+	display: block;
+}
+
+.links p {
+	color: blue;
+}
+
+.links h2 {
+	display: block;
+	margin-bottom: 15px;
+	font-family: "yellow";
+	color: blue;
+}
+
 .coverimage img {
-	border: solid 3px HotPink;
+	border: solid 1px HotPink;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
@@ -271,7 +289,7 @@ i {
 .bubble-one,
 .bubble-two {
 	position: absolute;
-	border: solid 3px HotPink;
+	border: solid 1px HotPink;
 	background-color: #afafaf;
 	color: red;
 	padding: 5px;
@@ -284,6 +302,7 @@ i {
 	width: 250px;
 }
 
+.links p,
 .bubble-one p,
 .bubble-two p {
 	display: inline-block;
@@ -310,7 +329,7 @@ i {
 	display: inline-block;
 	text-align: left;
 	width: 80%;
-	margin: 50px 20px 40px 20px;
+	margin: 40px 20px 20px 20px;
 }
 
 .newsletter input {
@@ -335,7 +354,7 @@ i {
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
-	border-bottom: 2px solid red;
+	border-bottom: 1px solid red;
 	padding-bottom: 10px;
 }
 
@@ -376,12 +395,3 @@ h2 {
 	transform: rotateX(180deg);
 }
 
-@media (max-width: 1050px) {
-	.home {
-		text-align: center;
-	}
-
-	.calendar {
-		text-align: center;
-	}
-}

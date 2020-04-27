@@ -30,6 +30,8 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="title archive"><a href="/archive">archive</a></div>
 	</div>
 	<div class="socials">
 		<a target="_blank" href="https://www.instagram.com/therightlube/"><i class="fa">&#xf16d;</i></a>
@@ -38,12 +40,16 @@
 </div>
 
 <script>
+	// calendar
+
 	$(document).ready(function() {
 		$(".title-toggle").click(function() {
 			$(".show-calendar").toggle()
-			$(".bio").toggle()
+			// $(".bio").toggle()
 		})
 	})
+
+	// cookie
 
 	function createCookie(name, value, days) {
 		if (days) {
