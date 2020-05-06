@@ -19,7 +19,7 @@ if (environment === 'now') {
 } else {
   cache = yaml.safeLoad(fs.readFileSync('./api/config.yaml', 'utf8'))
 }
-const channelCache = require('./api/writing.json')
+const contentCache = require('./api/writing.json')
 
 const app = express()
 
@@ -91,7 +91,8 @@ app.get('/', async function(req, res) {
       res.render('index.html', {
         title: 'Error 😭',
         static_url: cdn,
-        config: cache
+        config: cache,
+        arena: contentCache
       })
     })
 })
@@ -179,7 +180,8 @@ app.get('/writing', async function(req, res) {
       res.render('writing.html', {
         title: 'Error 😭',
         static_url: cdn,
-        config: cache
+        config: cache,
+        arena: contentCache
       })
     })
 })
@@ -226,7 +228,8 @@ app.get('/archive', async function(req, res) {
       res.render('archive.html', {
         title: 'Error 😭',
         static_url: cdn,
-        config: cache
+        config: cache,
+        arena: contentCache
       })
     })
 })
