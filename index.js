@@ -5,6 +5,7 @@ const mustacheExpress = require('mustache-express')
 const Arena = require('are.na')
 const yaml = require('js-yaml')
 const fs = require('fs')
+const tinydate = require('tinydate')
 require('dotenv-flow').config()
 
 const environment = process.env.environment
@@ -111,8 +112,15 @@ app.get('/writing', async function(req, res) {
       const config = yaml.safeLoad(channel.metadata.description) // get our site description from our are.na channel description - since it is loaded in as yaml, we can access it's values with `config.key`, ex: for title, we can use `config.details.title`
       const contents = channel.contents // clean up the results a little bit, and make the channel's contents available as a constant, `contents`
 
+      const formatDate = tinydate('{YYYY}-{MM}-{DD} {HH}:{mm}') // format date string (taken from note in writing.html)
+      contents.forEach(block => {
+        const createdDate = new Date(block.created_at) // get the date for each block using `created_at` and turn them into js date objects
+        block.date = formatDate(createdDate) // format our createdDate objects by passing them into our `formatDate()` function, and add them as `date` to our channel contents
+        // console.log(`${block.title} was created on ${block.date}`)
+      })
+
       contents.forEach(contentItem => {
-        var trunc = contentItem.title
+        let trunc = contentItem.title
         trunc = trunc
           .replace(/\s+/g, '-')
           .replace('€', 'e')
