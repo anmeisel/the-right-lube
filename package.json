@@ -62,7 +62,10 @@
     "bracketSpacing": true,
     "overrides": [
       {
-        "files": ["index.js", "*.js"],
+        "files": [
+          "index.js",
+          "*.js"
+        ],
         "options": {
           "tabWidth": 2,
           "semi": false,
@@ -70,7 +73,9 @@
         }
       },
       {
-        "files": ["*.html"],
+        "files": [
+          "*.html"
+        ],
         "options": {
           "parser": "html",
           "tabWidth": 4,
@@ -87,7 +92,13 @@
       }
     ]
   },
-  "prettierIgnore": ["js/vendor*", "*.min.js", "*.css", "assets*", "fonts*"],
+  "prettierIgnore": [
+    "js/vendor*",
+    "*.min.js",
+    "*.css",
+    "assets*",
+    "fonts*"
+  ],
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 2017
@@ -97,8 +108,14 @@
       "browser": true,
       "jquery": true
     },
-    "extends": ["eslint:recommended", "airbnb-base", "prettier"],
-    "plugins": ["prettier"],
+    "extends": [
+      "eslint:recommended",
+      "airbnb-base",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
     "rules": {
       "array-bracket-spacing": [
         0,
@@ -107,14 +124,37 @@
           "objectsInArrays": false
         }
       ],
-      "func-names": ["off"],
-      "no-console": ["warn"],
-      "no-param-reassign": ["error", { "props": false }],
-      "no-underscore-dangle": ["off"],
-      "object-curly-spacing": ["warn", "always"],
-      "prefer-destructuring": ["off"],
-      "prettier/prettier": ["warn"]
+      "func-names": [
+        "off"
+      ],
+      "no-console": [
+        "warn"
+      ],
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ],
+      "no-underscore-dangle": [
+        "off"
+      ],
+      "object-curly-spacing": [
+        "warn",
+        "always"
+      ],
+      "prefer-destructuring": [
+        "off"
+      ],
+      "prettier/prettier": [
+        "warn"
+      ]
     }
   },
-  "eslintIgnore": ["js/vendor*", "assets*", "fonts*", "Gruntfile.js"]
+  "eslintIgnore": [
+    "js/vendor*",
+    "assets*",
+    "fonts*",
+    "Gruntfile.js"
+  ]
 }
