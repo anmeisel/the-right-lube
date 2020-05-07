@@ -2,7 +2,7 @@
 
 ```
 # install dependencies
-$ npm install
+$ yarn
 
 # run
 $ nodemon
